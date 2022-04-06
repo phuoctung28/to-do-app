@@ -10,10 +10,12 @@ export const TodoApp = () => {
     setTodos((prevState) => [...prevState, todo]);
   };
   const onUpdateStatus = (id) => {
-    const { tmpTodos } = todos;
+    const tmpTodos = todos;
     const idx = tmpTodos.findIndex((todo) => todo.id === id);
-    const currentStatus = tmpTodos[idx]["isCompledted"];
-    tmpTodos[idx]["isCompledted"] = !currentStatus; //toggle
+    console.log(tmpTodos[idx]);
+    const currentStatus = tmpTodos[idx]["isCompleted"];
+
+    tmpTodos[idx]["isCompleted"] = !currentStatus; //toggle
     setTodos(tmpTodos);
   };
 
