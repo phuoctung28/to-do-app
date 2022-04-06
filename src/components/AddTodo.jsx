@@ -30,6 +30,7 @@ export const AddTodo = ({ onAddNewTodo }) => {
                 value={content}
                 placeholder="Add new todo"
                 onChange={onChangeHandler}
+                required
               />
             </div>
             <div className="col-2">

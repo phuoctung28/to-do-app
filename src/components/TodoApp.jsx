@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./TodoApp.css";
 import { TodoList } from "./TodoList";
 import { AddTodo } from "./AddTodo";
@@ -12,9 +12,7 @@ export const TodoApp = () => {
   const onUpdateStatus = (id) => {
     const tmpTodos = todos;
     const idx = tmpTodos.findIndex((todo) => todo.id === id);
-    console.log(tmpTodos[idx]);
     const currentStatus = tmpTodos[idx]["isCompleted"];
-
     tmpTodos[idx]["isCompleted"] = !currentStatus; //toggle
     setTodos(tmpTodos);
   };
