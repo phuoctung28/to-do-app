@@ -17,7 +17,6 @@ export const AddTodo = ({ onAddNewTodo }) => {
   };
   return (
     <div className="addTodo-container">
-      <h4>ADD ITEM</h4>
       <div className="add-item-input">
         <form onSubmit={onSubmitHandler}>
           <div className="row">

@@ -1,8 +1,15 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 export const TodoItem = ({ todo, onUpdateStatus }) => {
   const { id, content, isCompleted } = todo;
-  const classes = isCompleted ? `todo-item done` : `todo-item`;
+  const [classes, setClasses] = useState("todo-item");
+  useEffect(() => {
+    console.log(isCompleted);
+    if (todo.isCompleted) {
+      setClasses(`todo-item done`)
+    } else setClasses(`todo-item`)
+  }, [todo.isCompleted]);
+  
   return (
     <div className={classes}>
       <p>{content}</p>
